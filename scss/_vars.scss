@@ -1,0 +1,188 @@
+// css variables
+
+$rootWidth: 1280px;
+$asideWidth: 300px;
+$textContentWidth: 660px;
+
+$w_col_full: 896px; // main content width
+$w_col_h: 440px;    // half
+$w_col_3: 288px;    // third
+$w_col_4: 212px;    // quarter
+
+
+$cols: (
+    "w_col_full":   $w_col_full, 
+    "w_col_h":      $w_col_h, 
+    "w_col_3":      $w_col_3, 
+    "w_col_4":      $w_col_4
+);
+
+@each $key, $value in $cols {
+    .#{$key} {
+        width: $value;
+    }
+}
+
+$gap: 0.8rem;
+$gap2: 2*$gap;
+$gap3: 3*$gap;
+$gap4: 4*$gap;
+$gap5: 5*$gap;
+$gap6: 6*$gap;
+
+.rg {
+    width: 100%;
+    padding-top: 2*$gap;
+}
+
+// layoutControl
+    @for $i from 1 through 10 {
+        .pt#{$i} {
+            padding-top: calc(#{$i}*$gap);
+        }
+        %gapPT#{$i} {
+            padding-top: calc(#{$i}*$gap);
+        }
+    }
+
+// 
+
+$black: #202020;
+$red: #C9181E;
+$colorGray: #969696;
+$colorGrayMiddle: #BFBFBF; 
+$colorGrayDark: #757575;
+
+:root {
+    // this rule 
+    // color-scheme: light dark;
+    // allows you to use function: light-dark(LightValue, DarkValue) for all css values
+
+    --bg-color: #fff;
+    --bg-color-light: #F5F5F5;
+
+    --modal-color: #202020;
+    --box-shadow-common: 0 1px 3px rgba(32,32,32,.15);
+
+    --stroke-color: #DFDFDF;
+
+    --text-color-main: #202020;
+    --text-color-contrast: #fff;
+    --text-color-gray: #969696;
+    --text-color-gray-middle: #BFBFBF; 
+    --text-color-gray-dark: #757575;
+
+    --mark-color: #FFEBD9;
+
+    --disactive-gray: #DFDFDF;
+
+    --gray: #969696;
+    --new-red: #C9181E;
+
+    --theme-logo-src: url(https://static.gazeta.ru/nm2025/img/gazeta_logo_2025_bl.svg);
+
+    // ui
+    --icon-profile: url(https://static.gazeta.ru/nm2025/img/ui/profile_bl.svg);
+    --icon-search: url(https://static.gazeta.ru/nm2025/img/ui/search_bl.svg);
+    
+    --icon-g-rus-wh: url(../img/ui/g_rus_wh.svg);
+
+    --filter-image-brightness: none;
+
+    // common vars for all themes
+        
+        // native 
+        // --text-sans: "SourceSansPro", sans-serif;
+        
+        // google fonts
+        --text-sans: "Source Sans 3", sans-serif;
+        --text-serif: "Bitter", serif;
+        
+        
+        // --base-transition: all 0.3s ease;
+
+        --transition-color: color 0.6s ease;
+
+        // @for $i from 1 through 6 {
+        //     --gap#{$i} : calc(#{$i}*#{$gap});
+        // }
+
+    --ai-bg:    radial-gradient(at 10% 90%, #42c5fd 0px, transparent 70%),
+                radial-gradient(at 35% 45%, #2a41f6 0px, transparent 100%),
+                radial-gradient(at 80% 85%, #a160dd 0px, transparent 60%),
+                radial-gradient(at 100% 0%, #874be5 0px, transparent 100%);
+}
+
+@mixin setDarkThemeVariables {
+    --bg-color: #333;
+    --bg-color-light: #4e4e4e;
+
+    --modal-color: #DFDFDF;
+    // --box-shadow-common: 0 1px 3px rgba(200,200,200,.5);
+    // --box-shadow-common: 0 1px 3px rgba(178, 178, 178, 0.15);
+    --box-shadow-common: 0 1px 3px rgba(0, 0, 0, 0.25);
+
+    --stroke-color: #c4c4c4;
+    --text-color-main: #bababa;
+    --text-color-contrast: #202020;
+    --text-color-gray: #a7a7a7;
+    --text-color-gray-middle: #7a7a7a; 
+    --text-color-gray-dark: #bababa;
+
+    --mark-color: #38826d;
+    
+    --disactive-gray: #454545;
+
+    --gray: #a7a7a7;
+    --new-red: #ff2121;
+
+    --theme-logo-src: url(https://static.gazeta.ru/nm2025/img/gazeta_logo_2025_wh.svg);
+
+    // ui
+    --icon-profile: url(https://static.gazeta.ru/nm2025/img/ui/profile_wh.svg);
+    --icon-search: url(https://static.gazeta.ru/nm2025/img/ui/search_wh.svg);
+
+    --icon-g-rus-wh: url(../img/ui/g_rus_bl.svg);
+
+    --filter-image-brightness: brightness(80%);
+}
+
+%setDarkThemeVariables {
+    @include setDarkThemeVariables;
+}
+
+%baseContentBlock {
+    position: relative;
+    
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    
+    width: $rootWidth;
+    margin: auto;
+    padding: 8px 34px;
+    
+    background: var(--bg-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        // @include setDarkThemeVariables;
+    } 
+}
+
+.dark_theme {
+    @extend %setDarkThemeVariables;
+}
+
+@mixin screenW($size) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin screenH($size) {
+    @media screen and (max-height: $size) {
+        @content;
+    }
+}

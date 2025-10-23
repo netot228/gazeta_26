@@ -1,0 +1,52 @@
+@use "vars" as *;
+body {
+    font-size: 0;
+    line-height: 0;
+    background: var(--bg-color);
+
+    img {
+        filter: var(--filter-image-brightness);
+    }
+
+}
+
+
+.b_main {
+    @extend %baseContentBlock;
+}
+
+.row {
+    width: 100%;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: $gap2;
+    flex-basis: 100%;
+
+    &-item {
+        display: inline-flex;
+        gap: $gap2;
+        align-items: center;
+
+        &.m_col {
+            flex-flow: column;
+        }
+        &.m_fullwidth {
+            flex-basis: 100%;
+        }
+    }
+}
+
+// common ui icons and btns
+    ._icon-tg {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        background: url(../img/icons/tg_color.svg) no-repeat 50%;
+        background-size: 18px auto;
+    }    
+

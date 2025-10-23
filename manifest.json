@@ -1,0 +1,63 @@
+{
+    "gcm_sender_id": "216218215118",
+    "gcm_user_visible_only": true,
+    "name": "Газета.Ru",
+    "display": "fullscreen",
+    "short_name": "Газета.Ru",
+    "background_color": "#292929",
+    "theme_color": "#b11116",
+    "start_url": "/?utm_source=homescreen",
+    "description": "Главные новости дня из Москвы и регионов, информационная лента новостей, новости России и мира, события дня и последнего часа, аналитика, комментарии, видео.",
+    "icons": [
+        {
+            "src": "https://static.gazeta.ru/nm2021/i/icons/g_logo_square_16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "https://static.gazeta.ru/nm2021/i/icons/g_logo_square_32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "https://static.gazeta.ru/nm2021/i/icons/g_logo_square_48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "https://static.gazeta.ru/nm2021/i/icons/g_logo_square_64.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "https://static.gazeta.ru/nm2021/i/icons/g_logo_square_128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "https://static.gazeta.ru/nm2021/i/icons/g_logo_square_144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "https://static.gazeta.ru/nm2021/i/icons/g_logo_square_152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "https://static.gazeta.ru/nm2021/i/icons/g_logo_square_192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://static.gazeta.ru/nm2021/i/icons/g_logo_square_256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "https://static.gazeta.ru/nm2021/i/icons/g_logo_square_512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
