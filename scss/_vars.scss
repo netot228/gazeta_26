@@ -5,15 +5,17 @@ $asideWidth: 300px;
 $textContentWidth: 660px;
 
 $w_col_full: 896px; // main content width
+$w_col_list: 550px; // news list columns
 $w_col_h: 440px;    // half
 $w_col_3: 288px;    // third
 $w_col_4: 212px;    // quarter
 
 
 $cols: (
-    "w_col_full":   $w_col_full, 
-    "w_col_h":      $w_col_h, 
-    "w_col_3":      $w_col_3, 
+    "w_col_full":   $w_col_full,
+    "w_col_list":   $w_col_list,
+    "w_col_h":      $w_col_h,
+    "w_col_3":      $w_col_3,
     "w_col_4":      $w_col_4
 );
 
@@ -35,26 +37,25 @@ $gap6: 6*$gap;
     padding-top: 2*$gap;
 }
 
-// layoutControl
-    @for $i from 1 through 10 {
-        .pt#{$i} {
-            padding-top: calc(#{$i}*$gap);
-        }
-        %gapPT#{$i} {
-            padding-top: calc(#{$i}*$gap);
-        }
+@for $i from 1 through 10 {
+    .pt#{$i} {
+        padding-top: calc(#{$i}*#{$gap});
     }
+    %gapPT#{$i} {
+        padding-top: calc(#{$i}*#{$gap});
+    }
+}
 
-// 
 
 $black: #202020;
 $red: #C9181E;
 $colorGray: #969696;
-$colorGrayMiddle: #BFBFBF; 
+$colorGrayBright: #f5f5f5;
+$colorGrayMiddle: #BFBFBF;
 $colorGrayDark: #757575;
 
 :root {
-    // this rule 
+    // this rule
     // color-scheme: light dark;
     // allows you to use function: light-dark(LightValue, DarkValue) for all css values
 
@@ -66,11 +67,11 @@ $colorGrayDark: #757575;
 
     --stroke-color: #DFDFDF;
 
-    --text-color-main: #202020;
-    --text-color-contrast: #fff;
-    --text-color-gray: #969696;
-    --text-color-gray-middle: #BFBFBF; 
-    --text-color-gray-dark: #757575;
+    --color-main: #202020;
+    --color-contrast: #fff;
+    --color-gray: #969696;
+    --color-gray-middle: #BFBFBF;
+    --color-gray-dark: #757575;
 
     --mark-color: #FFEBD9;
 
@@ -84,24 +85,25 @@ $colorGrayDark: #757575;
     // ui
     --icon-profile: url(https://static.gazeta.ru/nm2025/img/ui/profile_bl.svg);
     --icon-search: url(https://static.gazeta.ru/nm2025/img/ui/search_bl.svg);
-    
+
     --icon-g-rus-wh: url(../img/ui/g_rus_wh.svg);
 
     --filter-image-brightness: none;
 
     // common vars for all themes
-        
-        // native 
+
+        // native
         // --text-sans: "SourceSansPro", sans-serif;
-        
+
         // google fonts
         --text-sans: "Source Sans 3", sans-serif;
         --text-serif: "Bitter", serif;
-        
-        
+
+
         // --base-transition: all 0.3s ease;
 
         --transition-color: color 0.6s ease;
+
 
         // @for $i from 1 through 6 {
         //     --gap#{$i} : calc(#{$i}*#{$gap});
@@ -123,14 +125,14 @@ $colorGrayDark: #757575;
     --box-shadow-common: 0 1px 3px rgba(0, 0, 0, 0.25);
 
     --stroke-color: #c4c4c4;
-    --text-color-main: #bababa;
-    --text-color-contrast: #202020;
-    --text-color-gray: #a7a7a7;
-    --text-color-gray-middle: #7a7a7a; 
-    --text-color-gray-dark: #bababa;
+    --color-main: #bababa;
+    --color-contrast: #202020;
+    --color-gray: #a7a7a7;
+    --color-gray-middle: #7a7a7a;
+    --color-gray-dark: #bababa;
 
     --mark-color: #38826d;
-    
+
     --disactive-gray: #454545;
 
     --gray: #a7a7a7;
@@ -153,22 +155,22 @@ $colorGrayDark: #757575;
 
 %baseContentBlock {
     position: relative;
-    
+
     display: flex;
     flex-flow: column;
     align-items: center;
-    
+
     width: $rootWidth;
     margin: auto;
     padding: 8px 34px;
-    
+
     background: var(--bg-color);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         // @include setDarkThemeVariables;
-    } 
+    }
 }
 
 .dark_theme {

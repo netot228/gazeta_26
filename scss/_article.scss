@@ -6,7 +6,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    
+
 
     &-header {
         display: inline-flex;
@@ -21,7 +21,7 @@
         display: inline-flex;
         gap: $gap2;
         font: 400 1.2rem/1.35 var(--text-sans);
-        color: var(--text-color-gray-dark);
+        color: var(--color-gray-dark);
 
         &.m_exclusive {
             &:before {
@@ -34,22 +34,22 @@
                 background-image: var(--icon-g-rus-wh);
                 background-size: 100%;
                 background-position: 50%;
-                
+
             }
         }
     }
 
     &-title {
         padding: $gap 0 $gap2;
-        
+
         .headline {
             font: 700 3.2rem/1.25 var(--text-serif);
-            color: var(--text-color-main);
+            color: var(--color-main);
             margin-bottom: $gap;
         }
         .subheader {
             font: 400 1.8rem/1.25 var(--text-sans);
-            color: var(--text-color-main);
+            color: var(--color-main);
         }
     }
 
@@ -73,7 +73,7 @@
             padding-right: 1.2rem;
             margin-left: $gap2;
             font: 400 1.2rem/1.25 var(--text-sans);
-            color: var(--text-color-main);
+            color: var(--color-main);
 
             &:first-child {
                 margin-left: 0;
@@ -113,7 +113,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        
+
         &-picture {
             position: relative;
             width: $textContentWidth;
@@ -123,7 +123,7 @@
                 width: 100%;
                 height: auto;
             }
-        
+
             &-imageplace {
                 position: relative;
                 width: 100%;
@@ -145,16 +145,16 @@
         width: $textContentWidth;
         padding: $gap2 0 $gap3;
         margin-bottom: $gap3;
-        border-bottom: 2px solid var(--text-color-main);
+        border-bottom: 2px solid var(--color-main);
 
         font: 400 22px/1.5 var(--text-sans);
-        color: var(--text-color-main);
+        color: var(--color-main);
     }
 
     &-text {
         width: $textContentWidth;
         font: 400 2rem/1.5 var(--text-sans);
-        color: var(--text-color-main);
+        color: var(--color-main);
         margin-bottom: $gap3;
 
         p {
@@ -176,7 +176,7 @@
                 }
 
                 &.tag {
-                    color: var(--text-color-main);
+                    color: var(--color-main);
                     font-weight: inherit;
                     border-bottom: 1px solid var(--stroke-color);
                     cursor: help;
@@ -188,7 +188,7 @@
             position: relative;
             margin: 4.0rem 0 2.4rem;
             font: 700 2.8rem/1.35 var(--text-serif);
-            color: var(--text-color-main);
+            color: var(--color-main);
             &:first-child {
                 padding-top: 0;
             }
@@ -212,7 +212,7 @@
 
             li + li {
                 margin-top: $gap2;
-            }            
+            }
         }
         ul {
             list-style-type: disc;
@@ -225,7 +225,7 @@
             // border-left: 3px solid var(--new-red);
             // font: bold 18px/1.35 $sans;
             font: bold 2.2rem/1.35 var(--text-sans);
-            color: var(--text-color-main);
+            color: var(--color-main);
             margin: $gap3 0;
 
             &:before {
@@ -240,7 +240,7 @@
         }
 
         u {
-            border-bottom: 1px solid var(--text-color-main);
+            border-bottom: 1px solid var(--color-main);
         }
         s {
             text-decoration: line-through;
@@ -254,7 +254,7 @@
         align-items: flex-start;
         padding: 0 $gap2;
         margin-bottom: $gap3;
-        
+
 
             &-item {
                 position: relative;
@@ -262,8 +262,8 @@
                 cursor: pointer;
                 margin-bottom: $gap2;
                 font: 400 1.6rem/1.35 var(--text-sans);
-                color: var(--text-color-gray-dark);
-                border-bottom: dashed 1px var(--text-color-gray-dark);
+                color: var(--color-gray-dark);
+                border-bottom: dashed 1px var(--color-gray-dark);
                 transition: var(--transition-color);
 
                 &:before {
@@ -276,7 +276,7 @@
                     height: 5px;
                     margin: auto;
                     border-radius: 50%;
-                    background: var(--text-color-gray-dark);
+                    background: var(--color-gray-dark);
                 }
 
                 &:hover {
