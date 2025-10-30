@@ -54,6 +54,16 @@ $colorGrayBright: #f5f5f5;
 $colorGrayMiddle: #BFBFBF;
 $colorGrayDark: #757575;
 
+$textSans: "Source Sans 3", sans-serif;
+$textSerif: "Bitter", serif;
+
+$transitionColor: color 0.6s ease;
+
+$aiBg:  radial-gradient(at 10% 90%, #42c5fd 0px, transparent 70%),
+        radial-gradient(at 35% 45%, #2a41f6 0px, transparent 100%),
+        radial-gradient(at 80% 85%, #a160dd 0px, transparent 60%),
+        radial-gradient(at 100% 0%, #874be5 0px, transparent 100%);
+
 :root {
     // this rule
     // color-scheme: light dark;
@@ -61,6 +71,7 @@ $colorGrayDark: #757575;
 
     --bg-color: #fff;
     --bg-color-light: #F5F5F5;
+    --bg-color-contrast: #202020;
 
     --modal-color: #202020;
     --box-shadow-common: 0 1px 3px rgba(32,32,32,.15);
@@ -96,32 +107,31 @@ $colorGrayDark: #757575;
         // --text-sans: "SourceSansPro", sans-serif;
 
         // google fonts
-        --text-sans: "Source Sans 3", sans-serif;
-        --text-serif: "Bitter", serif;
+        // --text-sans: "Source Sans 3", sans-serif;
+        // --text-serif: "Bitter", serif;
 
 
         // --base-transition: all 0.3s ease;
 
-        --transition-color: color 0.6s ease;
+        // --transition-color: color 0.6s ease;
 
 
         // @for $i from 1 through 6 {
         //     --gap#{$i} : calc(#{$i}*#{$gap});
         // }
 
-    --ai-bg:    radial-gradient(at 10% 90%, #42c5fd 0px, transparent 70%),
-                radial-gradient(at 35% 45%, #2a41f6 0px, transparent 100%),
-                radial-gradient(at 80% 85%, #a160dd 0px, transparent 60%),
-                radial-gradient(at 100% 0%, #874be5 0px, transparent 100%);
+    // --ai-bg:    radial-gradient(at 10% 90%, #42c5fd 0px, transparent 70%),
+    //             radial-gradient(at 35% 45%, #2a41f6 0px, transparent 100%),
+    //             radial-gradient(at 80% 85%, #a160dd 0px, transparent 60%),
+    //             radial-gradient(at 100% 0%, #874be5 0px, transparent 100%);
 }
 
 @mixin setDarkThemeVariables {
     --bg-color: #333;
     --bg-color-light: #4e4e4e;
+    --bg-color-contrast: #fff;
 
     --modal-color: #DFDFDF;
-    // --box-shadow-common: 0 1px 3px rgba(200,200,200,.5);
-    // --box-shadow-common: 0 1px 3px rgba(178, 178, 178, 0.15);
     --box-shadow-common: 0 1px 3px rgba(0, 0, 0, 0.25);
 
     --stroke-color: #c4c4c4;

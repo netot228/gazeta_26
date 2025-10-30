@@ -1,0 +1,184 @@
+@use "vars" as *;
+.b_photoreport {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background: $black;
+
+    &-mainarea {
+        position: relative;
+        width: 100%;
+        display: block;
+        padding-top: 66.667%;
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: stretch;
+            justify-content: start;
+            gap: $gap;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+
+            .item {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                flex-shrink: 0;
+
+                img {
+                    display: block;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    &-controlbtn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        margin: auto;
+        border-radius: 50%;
+        background: #fff;
+        overflow: hidden;
+        cursor: pointer;
+
+        &.m_left {
+            left: $gap2;
+            transform: scale(-1,1);
+        }
+        &.m_right {
+            right: $gap2;
+        }
+
+        &.m_disable {
+            cursor: default;
+            opacity: .5;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            opacity: 1;
+            background: url(../img/ui/arr_spread_gallery_bl.svg) no-repeat 50% 50%;
+        }
+
+        span {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            right: 0;
+            opacity: 0;
+            background: url(../img/ui/arr_spread_gallery_bl.svg) no-repeat 50% 50%;
+            transition: right 0.6s ease;
+        }
+
+        &:hover:not(.m_disable) {
+            &:before {
+                opacity: 0;
+            }
+            span {
+                opacity: 1;
+                right: -40px;
+            }
+        }
+    }
+
+    &-info {
+        width: $textContentWidth;
+        padding: $gap2 0;
+
+        .picsign {
+            font: 400 1.6rem/1.5 $textSans;
+            color: #fff;
+        }
+
+        .copyright {
+            font: 400 1.2rem/1.5 $textSans;
+            // color: var(--color-grey-middle);
+            color: $colorGrayMiddle;
+            &:before {
+                content: '\00A9';
+                display: inline-block;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    $previewHeight: 38px;
+    &-preview {
+        position: relative;
+        height: 8+$previewHeight;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: $gap3;
+
+        .slider {
+            position: relative;
+            display: flex;
+            flex-flow: row nowrap;
+            gap: $gap/2;
+            height: 100px;
+            width: 100%;
+            padding: 0 118px;
+            overflow-y: hidden;
+            overflow-x: scroll;
+
+            .item {
+                position: relative;
+                display: flex;
+                height: $previewHeight;
+                align-items: center;
+                justify-content: center;
+                border-radius: 2px;
+                // overflow: hidden;
+                flex-shrink: 0;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: -8px;
+                    left: 0;
+                    right: 0;
+                    height: 2px;
+                    border-radius: 2px;
+                    background: $red;
+                    opacity: 0;
+                }
+
+                img {
+                    display: inline-flex;
+                    // flex-shrink: 0;
+                    height: 100%;
+                    width: auto;
+                }
+
+                &.active {
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+}

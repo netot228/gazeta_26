@@ -57,12 +57,12 @@ hr.gap {
 
 // common ui icons and btns
     ._cute_title {
-        font: 700 2.8rem/1.35 var(--text-serif);
+        font: 700 2.8rem/1.35 $textSerif;
         color: var(--color-main);
         margin-bottom: $gap2;
         &:after {
             content: '.';
-            font: 700 2.8rem/1.35 var(--text-serif);
+            font: 700 2.8rem/1.35 $textSerif;
             color: var(--new-red);
         }
     }
@@ -74,7 +74,7 @@ hr.gap {
         padding: 8px 16px 10px;
         border-radius: 2px;
         background-color: var(--color-main);
-        font: 400 1.6rem/1 var(--text-sans);
+        font: 400 1.6rem/1 $textSans;
         color: var(--color-contrast);
         cursor: pointer;
         transition: background-color 0.6s ease;

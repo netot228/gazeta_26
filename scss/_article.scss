@@ -6,6 +6,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    margin-bottom: $gap3;
 
 
     &-header {
@@ -20,7 +21,7 @@
         position: relative;
         display: inline-flex;
         gap: $gap2;
-        font: 400 1.2rem/1.35 var(--text-sans);
+        font: 400 1.2rem/1.35 $textSans;
         color: var(--color-gray-dark);
 
         &.m_exclusive {
@@ -43,12 +44,12 @@
         padding: $gap 0 $gap2;
 
         .headline {
-            font: 700 3.2rem/1.25 var(--text-serif);
+            font: 700 3.2rem/1.25 $textSerif;
             color: var(--color-main);
             margin-bottom: $gap;
         }
         .subheader {
-            font: 400 1.8rem/1.25 var(--text-sans);
+            font: 400 1.8rem/1.25 $textSans;
             color: var(--color-main);
         }
     }
@@ -72,7 +73,7 @@
             gap: $gap;
             padding-right: 1.2rem;
             margin-left: $gap2;
-            font: 400 1.2rem/1.25 var(--text-sans);
+            font: 400 1.2rem/1.25 $textSans;
             color: var(--color-main);
 
             &:first-child {
@@ -105,7 +106,7 @@
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            background-image: var(--ai-bg);
+            background-image: $aiBg;
         }
     }
 
@@ -119,9 +120,14 @@
             width: $textContentWidth;
             height: calc($textContentWidth / 3)*2;
 
-            &.m_normal_size {
+            &.m_normal_size  {
                 width: 100%;
                 height: auto;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
             }
 
             &-imageplace {
@@ -147,15 +153,14 @@
         margin-bottom: $gap3;
         border-bottom: 2px solid var(--color-main);
 
-        font: 400 22px/1.5 var(--text-sans);
+        font: 400 22px/1.5 $textSans;
         color: var(--color-main);
     }
 
     &-text {
         width: $textContentWidth;
-        font: 400 2rem/1.5 var(--text-sans);
+        font: 400 2rem/1.5 $textSans;
         color: var(--color-main);
-        margin-bottom: $gap3;
 
         p {
             position: relative;
@@ -187,7 +192,7 @@
         h4, h2 {
             position: relative;
             margin: 4.0rem 0 2.4rem;
-            font: 700 2.8rem/1.35 var(--text-serif);
+            font: 700 2.8rem/1.35 $textSerif;
             color: var(--color-main);
             &:first-child {
                 padding-top: 0;
@@ -224,7 +229,7 @@
             // padding-left: 30px;
             // border-left: 3px solid var(--new-red);
             // font: bold 18px/1.35 $sans;
-            font: bold 2.2rem/1.35 var(--text-sans);
+            font: bold 2.2rem/1.35 $textSans;
             color: var(--color-main);
             margin: $gap3 0;
 
@@ -261,10 +266,10 @@
                 display: inline-flex;
                 cursor: pointer;
                 margin-bottom: $gap2;
-                font: 400 1.6rem/1.35 var(--text-sans);
+                font: 400 1.6rem/1.35 $textSans;
                 color: var(--color-gray-dark);
                 border-bottom: dashed 1px var(--color-gray-dark);
-                transition: var(--transition-color);
+                transition: $transitionColor;
 
                 &:before {
                     content: '';

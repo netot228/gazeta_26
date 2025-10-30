@@ -71,22 +71,22 @@
     }
     &-title {
         position: relative;
-        font: 400 1.8rem/1.25 var(--text-sans);
+        font: 400 1.8rem/1.25 $textSans;
         color: var(--color-main);
-        transition: var(--transition-color);
+        transition: $transitionColor;
     }
     &-time {
-        font: 400 1.1rem/1.25 var(--text-serif);
+        font: 400 1.1rem/1.25 $textSerif;
         color: var(--color-gray);
     }
 
     &.m_feature {
         .b_ear {
             &-title {
-                font: 700 2.4rem/1.35 var(--text-serif);
+                font: 700 2.4rem/1.35 $textSerif;
             }
             &-time {
-                font: 400 1.1rem/1.25 var(--text-serif);
+                font: 400 1.1rem/1.25 $textSerif;
                 color: var(--color-gray);
             }
         }
@@ -94,7 +94,7 @@
     &.m_middle {
         .b_ear {
             &-title {
-                font: 700 1.8rem/1.35 var(--text-serif);
+                font: 700 1.8rem/1.35 $textSerif;
             }
             &-time {
                 display: none;
@@ -104,7 +104,7 @@
     &.m_cmn {
         .b_ear {
             &-title {
-                font: 700 1.6rem/1.35 var(--text-serif);
+                font: 700 1.6rem/1.35 $textSerif;
             }
         }
     }
@@ -159,42 +159,39 @@
             }
 
             &-title {
-                font: 700 1.8rem/1.35 var(--text-serif);
+                font: 700 1.8rem/1.35 $textSerif;
                 color: #fff;
                 margin-bottom: 0;
             }
         }
 
         &.m_photo {
+            .b_ear-image {
+                border-radius: 24px 24px 0 0;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    z-index: 10;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 40%;
+                    background-image: linear-gradient(to bottom, transparent 0%, $black 100%);
+                }
+            }
+
             .b_ear-title {
                 margin: 0;
+
                 &:after {
                     content: '';
                     display: block;
                     float: right;
-
-                    // width: 100px;
-                    // height: 100px;
-
-                    // shape-outside: polygon(100% 0, 100% 100%, 0 100%);
-                    // clip-path: polygon(100% 0, 100% 100%, 0 100%);
-                    // background: green;
-
                     width: 24px;
                     height: 24px;
                     margin: 4px 0 0 4px;
                     background: url(../img/ui/photo_wh.svg) no-repeat 50%;
                     background-size: 100%;
-
-                    // display: inline-block;
-                    // width: 200px;
-                    // height: 200px;
-                    // shape-outside: circle(50% at 0 50%);
-                    // float: left;
-                    // content: '';
-                    // background: linear-gradient(to top right, #FDB171, #FD987D);
-                    // clip-path: circle(50% at 0 50%);
-                    // shape-margin: 0;
                 }
             }
         }
@@ -235,10 +232,10 @@
                 }
             }
             &-title {
-                font: 400 1.8rem/1.25 var(--text-sans);
+                font: 400 1.8rem/1.25 $textSans;
             }
             &-time {
-                font: 400 1.1rem/1.25 var(--text-serif);
+                font: 400 1.1rem/1.25 $textSerif;
                 color: var(--color-gray);
             }
         }
@@ -321,11 +318,13 @@
                 &:after {
                     content: '';
                     display: inline-block;
+                    top: 0;
                     width: 35px;
                     height: 16px;
                     background: url(../img/ui/live.svg) no-repeat 50%;
                     background-size: auto 100%;
                     vertical-align: middle;
+                    border-radius: 0%;
                 }
             }
         }
@@ -334,7 +333,7 @@
     &.m_column {
         .b_ear {
             &-title {
-                font: 700 1.4rem/1.5 var(--text-serif);
+                font: 700 1.4rem/1.5 $textSerif;
                 font-style: italic;
             }
             &-author {
@@ -359,7 +358,7 @@
                     }
                 }
                 .name {
-                    font: 400 1.2rem/1.35 var(--text-sans);
+                    font: 400 1.2rem/1.35 $textSans;
                     color: var(--color-main);
                 }
             }
@@ -374,7 +373,7 @@
                 overflow: hidden;
                 border-radius: 24px;
 
-                &:after {
+                &:after  {
                     content: '';
                     position: absolute;
                     z-index: 10;

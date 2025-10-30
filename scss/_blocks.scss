@@ -36,9 +36,9 @@
         &-item {
             display: inline-flex;
             margin-left: 3*$gap;
-            font: 600 1.6rem/1.25 var(--text-sans);
+            font: 600 1.6rem/1.25 $textSans;
             color: var(--color-main);
-            transition: var(--transition-color);
+            transition: $transitionColor;
 
             &:hover {
                 color: var(--new-red);
@@ -187,19 +187,19 @@
                             gap: 0.3rem;
                             width: 100%;
                             margin-bottom: 1.4vh;
-                            font: 400 1.6rem/1.25 var(--text-sans);
+                            font: 400 1.6rem/1.25 $textSans;
 
-                            // font-family: var(--text-sans);
+                            // font-family: $textSans;
                             // font-size:
                             color: var(--color-main);
-                            transition: var(--transition-color);
+                            transition: $transitionColor;
 
                             &:last-child {
                                 margin-bottom: 0;
                             }
 
                             @include screenH(768px){
-                                font: 400 2.2vh/1.25 var(--text-sans);
+                                font: 400 2.2vh/1.25 $textSans;
                             }
 
                             &:hover {
@@ -244,7 +244,7 @@
 
         .label {
             display: inline-flex;
-            font: 400 11px/1 var(--text-sans);
+            font: 400 11px/1 $textSans;
             color: var(--color-main);
             margin-bottom: 1.2vh;
         }
@@ -343,9 +343,9 @@
         margin-left: 1.6rem;
         padding-left: 1.6rem;
 
-        font: 400 1.4rem/1.35 var(--text-sans);
+        font: 400 1.4rem/1.35 $textSans;
         color: var(--color-main);
-        transition: var(--transition-color);
+        transition: $transitionColor;
 
         &:first-child {
             margin-left: 0;
@@ -421,9 +421,9 @@
                 position: relative;
                 display: inline-flex;
                 padding: 0;
-                font: 400 1.4rem/1.35 var(--text-sans);
+                font: 400 1.4rem/1.35 $textSans;
                 color: var(--color-main);
-                transition: var(--transition-color);
+                transition: $transitionColor;
 
                 &:before {
                     content: '';
@@ -514,7 +514,7 @@
             align-items: start;
             justify-content: space-between;
             gap: 3*$gap;
-            font: 400 1.4rem/1.35 var(--text-sans);
+            font: 400 1.4rem/1.35 $textSans;
             color: var(--color-main);
 
             // p + p {
@@ -549,7 +549,7 @@
             justify-content: center;
             width: 24px;
             height: 24px;
-            font: 600 12px/1 var(--text-sans);
+            font: 600 12px/1 $textSans;
             color: var(--bg-color);
 
             background-color: var(--color-main);
@@ -587,10 +587,10 @@
         position: relative;
         display: inline-flex;
         align-items: center;
-        font: 600 1.8rem/1 var(--text-sans);
+        font: 600 1.8rem/1 $textSans;
         color: var(--color-gray-middle);
         cursor: pointer;
-        transition: var(--transition-color);
+        transition: $transitionColor;
 
         &:before {
             content: '';
@@ -688,7 +688,7 @@
             bottom: 0;
             display: flex;
             align-items: center;
-            font: 500 14px/1 var(--text-sans);
+            font: 500 14px/1 $textSans;
             color: var(--gray);
             opacity: 1;
             transition: all 0.3s ease;
@@ -702,7 +702,7 @@
             padding: 0 2*$gap;
             height: 36px;
             width: calc(100% - 100px);
-            font: 500 14px/1.25 var(--text-sans);
+            font: 500 14px/1.25 $textSans;
             color: var(--color-main);
             &::first-letter {
                 text-transform: uppercase;
@@ -724,7 +724,7 @@
             align-items: center;
             // width: 100px;
             padding: 0 10px;
-            font: 500 14px/1 var(--text-sans);
+            font: 500 14px/1 $textSans;
             color: var(--color-main);
             text-align: center;
             cursor: pointer;
@@ -829,9 +829,9 @@
         align-items: center;
         justify-content: center;
         padding: $gap 0;
-        font: 400 1.4rem/1.35 var(--text-sans);
+        font: 400 1.4rem/1.35 $textSans;
         color: var(--color-main);
-        transition: var(--transition-color);
+        transition: $transitionColor;
 
         &:after {
             content: "";
@@ -948,9 +948,9 @@
 
         &-title {
             max-width: 265px;
-            font: 900 2.2rem/1.35 var(--text-serif);
+            font: 900 2.2rem/1.35 $textSerif;
             color: #fff;
-            transition: var(--transition-color)
+            transition: $transitionColor
         }
 
         &:hover {
@@ -1001,7 +1001,7 @@
             background: none;
         }
         &-title {
-            font: 700 1.8rem/1.35 var(--text-serif);
+            font: 700 1.8rem/1.35 $textSerif;
             color: #fff;
         }
     }
@@ -1012,7 +1012,7 @@
         align-items: center;
         gap: $gap2;
 
-        font: 400 1.6rem/1.25 var(--text-sans);
+        font: 400 1.6rem/1.25 $textSans;
         color: $colorGrayMiddle;
 
         &-btns {
@@ -1031,7 +1031,7 @@
                 border-radius: 24px;
                 color: $colorGrayMiddle;
                 transition: background-color 0.6s ease,
-                            var(--transition-color);
+                            $transitionColor;
 
                 &:hover {
                     color: #fff;
