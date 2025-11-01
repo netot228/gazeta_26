@@ -101,43 +101,43 @@ table {
 }
 
 .pt1 {
-  padding-top: calc(1*0.8rem);
+  padding-top: calc(1 * 0.8rem);
 }
 
 .pt2 {
-  padding-top: calc(2*0.8rem);
+  padding-top: calc(2 * 0.8rem);
 }
 
 .pt3 {
-  padding-top: calc(3*0.8rem);
+  padding-top: calc(3 * 0.8rem);
 }
 
 .pt4 {
-  padding-top: calc(4*0.8rem);
+  padding-top: calc(4 * 0.8rem);
 }
 
 .pt5 {
-  padding-top: calc(5*0.8rem);
+  padding-top: calc(5 * 0.8rem);
 }
 
 .pt6 {
-  padding-top: calc(6*0.8rem);
+  padding-top: calc(6 * 0.8rem);
 }
 
 .pt7 {
-  padding-top: calc(7*0.8rem);
+  padding-top: calc(7 * 0.8rem);
 }
 
 .pt8 {
-  padding-top: calc(8*0.8rem);
+  padding-top: calc(8 * 0.8rem);
 }
 
 .pt9 {
-  padding-top: calc(9*0.8rem);
+  padding-top: calc(9 * 0.8rem);
 }
 
 .pt10 {
-  padding-top: calc(10*0.8rem);
+  padding-top: calc(10 * 0.8rem);
 }
 
 :root {
@@ -362,7 +362,7 @@ table {
 .longdiv {
   width: 100%;
   height: 2000px;
-  background: #9df9e9;
+  background: rgb(157, 249, 233);
   flex-shrink: 0;
 }
 
@@ -1599,6 +1599,9 @@ hr.gap {
 }
 .b_ear:hover .b_ear-title {
   color: var(--new-red);
+}
+.b_ear:hover .b_ear-image img {
+  transform: scale(1.07, 1.07);
 }
 .b_ear-image {
   position: relative;

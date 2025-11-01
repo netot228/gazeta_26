@@ -136,7 +136,7 @@
             position: relative;
             display: flex;
             flex-flow: row nowrap;
-            gap: $gap/2;
+            gap: calc($gap / 2);
             height: 100px;
             width: 100%;
             padding: 0 118px;

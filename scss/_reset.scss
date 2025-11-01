@@ -36,13 +36,6 @@ html {
     //     // font-size: 1px;
     // }
 }
-// html, body {
-//     height: 100%;
-// }
-
-body {
-    background: #333;
-}
 
 ul[role='list'], ol[role='list']{
     list-style: none;
@@ -53,12 +46,6 @@ a:not([class]){
 }
 :link,:visited {
   text-decoration: none;
-}
-
-img, picture, svg, video, canvas, iframe {
-//   max-width: 100%;
-  height: auto;
-  vertical-align: middle;
 }
 
 a img,
