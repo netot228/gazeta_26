@@ -58,6 +58,8 @@ $textSans: "Source Sans 3", sans-serif;
 $textSerif: "Bitter", serif;
 
 $transitionColor: color 0.6s ease;
+$easeOutQuint: cubic-bezier(0.22, 1, 0.36, 1);
+
 
 $aiBg:  radial-gradient(at 10% 90%, #42c5fd 0px, transparent 70%),
         radial-gradient(at 35% 45%, #2a41f6 0px, transparent 100%),
@@ -101,29 +103,7 @@ $aiBg:  radial-gradient(at 10% 90%, #42c5fd 0px, transparent 70%),
 
     --filter-image-brightness: none;
 
-    // common vars for all themes
 
-        // native
-        // --text-sans: "SourceSansPro", sans-serif;
-
-        // google fonts
-        // --text-sans: "Source Sans 3", sans-serif;
-        // --text-serif: "Bitter", serif;
-
-
-        // --base-transition: all 0.3s ease;
-
-        // --transition-color: color 0.6s ease;
-
-
-        // @for $i from 1 through 6 {
-        //     --gap#{$i} : calc(#{$i}*#{$gap});
-        // }
-
-    // --ai-bg:    radial-gradient(at 10% 90%, #42c5fd 0px, transparent 70%),
-    //             radial-gradient(at 35% 45%, #2a41f6 0px, transparent 100%),
-    //             radial-gradient(at 80% 85%, #a160dd 0px, transparent 60%),
-    //             radial-gradient(at 100% 0%, #874be5 0px, transparent 100%);
 }
 
 @mixin setDarkThemeVariables {
