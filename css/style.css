@@ -1,66 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  outline: none;
-  border: 0;
-  background: transparent;
-  font-size: inherit;
-  line-height: inherit;
-  text-decoration: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: antialiased;
-  box-shadow: none;
-  color: inherit;
-}
-
-html {
-  -moz-tab-size: 4;
-  tab-size: 4;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  word-break: break-word;
-  font-size: 10px;
-}
-
-ul[role=list], ol[role=list] {
-  list-style: none;
-}
-
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-:link, :visited {
-  text-decoration: none;
-}
-
-a img,
-:link img,
-:visited img {
-  border: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 .w_col_full {
   width: 896px;
 }
@@ -145,7 +84,8 @@ table {
   --theme-logo-src: url(https://static.gazeta.ru/nm2025/img/gazeta_logo_2025_bl.svg);
   --icon-profile: url(https://static.gazeta.ru/nm2025/img/ui/profile_bl.svg);
   --icon-search: url(https://static.gazeta.ru/nm2025/img/ui/search_bl.svg);
-  --icon-g-rus-wh: url(../img/ui/g_rus_wh.svg);
+  --icon-g-rus-wh: url(https://static.gazeta.ru/nm2025/img/ui/g_rus_wh.svg);
+  --icon-tick_arrow_dwn: url(https://static.gazeta.ru/nm2025/img/ui/tick_arr_dwn_bl.svg);
   --filter-image-brightness: none;
 }
 
@@ -168,7 +108,8 @@ table {
   --theme-logo-src: url(https://static.gazeta.ru/nm2025/img/gazeta_logo_2025_wh.svg);
   --icon-profile: url(https://static.gazeta.ru/nm2025/img/ui/profile_wh.svg);
   --icon-search: url(https://static.gazeta.ru/nm2025/img/ui/search_wh.svg);
-  --icon-g-rus-wh: url(../img/ui/g_rus_bl.svg);
+  --icon-g-rus-wh: url(https://static.gazeta.ru/nm2025/img/ui/g_rus_bl.svg);
+  --icon-tick_arrow_dwn: url(https://static.gazeta.ru/nm2025/img/ui/tick_arr_dwn_wh.svg);
   --filter-image-brightness: brightness(80%);
 }
 
@@ -181,6 +122,67 @@ table {
   margin: auto;
   padding: 8px 34px;
   background: var(--bg-color);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: 0;
+  background: transparent;
+  font-size: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  box-shadow: none;
+  color: inherit;
+}
+
+html {
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  word-break: break-word;
+  font-size: 10px;
+}
+
+ul[role=list], ol[role=list] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+:link, :visited {
+  text-decoration: none;
+}
+
+a img,
+:link img,
+:visited img {
+  border: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 #_id_gazeta_header .b_profile {
@@ -459,7 +461,7 @@ hr.gap {
   justify-content: center;
   width: 24px;
   height: 24px;
-  background: url(../img/icons/tg_color.svg) no-repeat 50%;
+  background: url(https://static.gazeta.ru/nm2025/img/icons/tg_color.svg) no-repeat 50%;
   background-size: 18px auto;
 }
 
@@ -581,6 +583,7 @@ hr.gap {
   align-items: center;
   justify-content: center;
   background-color: var(--bg-color-light);
+  overflow: hidden;
 }
 .b_article-media-picture-imageplace img {
   display: block;
@@ -706,6 +709,256 @@ hr.gap {
 .b_article-content_list-item:hover {
   color: var(--new-red);
   border-bottom: dashed 1px var(--new-red);
+}
+.b_article-incut.m_details {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.6rem;
+  border-radius: 2px;
+  background: var(--bg-color-light);
+}
+.b_article-incut.m_details .title {
+  position: relative;
+  padding: 1.6rem;
+  font: 600 1.4rem/1.25 "Bitter", serif;
+  color: var(--color-main);
+}
+.b_article-incut.m_details .text {
+  padding: 0 1.6rem;
+  font: 400 1.4rem/1.25 "Source Sans 3", sans-serif;
+  color: var(--color-main);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.b_article-incut.m_details:not(._s_close_open_state_toggle) .text {
+  padding: 1.6rem 1.6rem;
+  max-height: none;
+  opacity: 1;
+  overflow: auto;
+}
+.b_article-incut.m_details._s_close_open_state_toggle .title {
+  cursor: pointer;
+}
+.b_article-incut.m_details._s_close_open_state_toggle .title:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 1.6rem;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  background: var(--icon-tick_arrow_dwn) no-repeat 50% 50%;
+  background-size: 8px auto;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+.b_article-incut.m_details._s_close_open_state_toggle.open .title:before {
+  transform: rotate(180deg);
+}
+.b_article-incut.m_details._s_close_open_state_toggle.open .text {
+  padding: 1.6rem 1.6rem;
+  max-height: 1000px;
+  opacity: 1;
+}
+.b_article-incut.m_picture {
+  position: relative;
+  width: 100%;
+}
+.b_article-incut.m_picture .picture-imageplace {
+  position: relative;
+  width: 660px;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color-light);
+  overflow: hidden;
+}
+.b_article-incut.m_picture .picture-imageplace.m_normal_size {
+  width: 100%;
+  height: auto;
+}
+.b_article-incut.m_picture .picture-imageplace.m_normal_size img.front {
+  width: 100%;
+  height: auto;
+}
+.b_article-incut.m_picture .picture-imageplace img {
+  display: block;
+  height: 100%;
+}
+.b_article-incut.m_picture .picture-imageplace img.front {
+  display: block;
+}
+.b_article-incut.m_picture .picture-imageplace img.hd {
+  display: none;
+}
+.b_article-incut.m_picture .picture-caption {
+  position: relative;
+  width: 660px;
+  padding: 0.8rem 0;
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+  justify-content: start;
+  gap: 0.8rem;
+}
+.b_article-incut.m_picture .picture-caption .picsign {
+  font: 400 1.4rem/1.35 "Source Sans 3", sans-serif;
+  color: var(--color-main);
+}
+.b_article-incut.m_picture .picture-caption .picsign.hide {
+  display: none;
+}
+.b_article-incut.m_picture .picture-caption .copyright {
+  font: 400 1.2rem/1.35 "Source Sans 3", sans-serif;
+  color: var(--color-gray-middle);
+}
+.b_article-incut.m_picture .picture-caption .copyright:before {
+  content: "©";
+  display: inline-block;
+  margin-right: 5px;
+}
+.b_article-incut.m_picture .picture-caption .copyright.hide {
+  display: none;
+}
+.b_article-incut.m_picture .picture-togglebtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  cursor: zoom-in;
+}
+.b_article-incut.m_picture .picture-togglebtn span {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.b_article-incut.m_picture .picture-togglebtn span:before, .b_article-incut.m_picture .picture-togglebtn span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 8px;
+  height: 5px;
+  margin: auto;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/tick_arr_dwn_bl.svg) no-repeat 50% 50%;
+  transform: scale(1) rotate(0deg) translate(0px, 0px);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.b_article-incut.m_picture .picture-togglebtn span:before {
+  transform: scale(1) rotate(45deg) translate(0px, 7px);
+}
+.b_article-incut.m_picture .picture-togglebtn span:after {
+  transform: scale(1) rotate(-135deg) translate(0px, 7px);
+}
+.b_article-incut.m_picture .picture-togglebtn:hover span:before {
+  transform: scale(1.1) rotate(45deg) translate(0px, 9px);
+}
+.b_article-incut.m_picture .picture-togglebtn:hover span:after {
+  transform: scale(1.1) rotate(-135deg) translate(0px, 9px);
+}
+.b_article-incut.m_picture:fullscreen {
+  background: var(--bg-color);
+}
+.b_article-incut.m_picture:fullscreen .picture-imageplace {
+  position: absolute;
+  top: 0;
+  left: 4rem;
+  right: 300px;
+  bottom: 0;
+  width: calc(100% - 300px - 4rem);
+  height: 100%;
+  background: var(--bg-color);
+}
+.b_article-incut.m_picture:fullscreen .picture-imageplace:before {
+  content: "";
+  position: absolute;
+  z-index: 12;
+  top: 30px;
+  left: 0;
+  width: 110px;
+  height: 14px;
+  background: var(--theme-logo-src) no-repeat 50% 50%;
+  background-size: auto 100%;
+}
+.b_article-incut.m_picture:fullscreen .picture-imageplace img.front {
+  display: none;
+}
+.b_article-incut.m_picture:fullscreen .picture-imageplace img.hd {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+.b_article-incut.m_picture:fullscreen .picture-caption {
+  position: absolute;
+  top: 0;
+  right: 4rem;
+  bottom: 0;
+  width: 240px;
+  justify-content: center;
+}
+.b_article-incut.m_picture:fullscreen .picture-togglebtn {
+  position: fixed;
+  top: 1.6rem;
+  left: auto;
+  right: 1.6rem;
+  bottom: auto;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.b_article-incut.m_picture:fullscreen .picture-togglebtn span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  cursor: pointer;
+  background: transparent;
+}
+.b_article-incut.m_picture:fullscreen .picture-togglebtn span:before, .b_article-incut.m_picture:fullscreen .picture-togglebtn span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 2px;
+  margin: auto;
+  border-radius: 2px;
+  background-color: var(--color-main);
+  background-image: none;
+  transform-origin: 50%;
+  transform: scale(1) rotate(0deg) translate(0px, 0px);
+  transition: all 0.3s ease;
+}
+.b_article-incut.m_picture:fullscreen .picture-togglebtn span:before {
+  transform: scale(1) rotate(45deg) translate(0px, 0px);
+}
+.b_article-incut.m_picture:fullscreen .picture-togglebtn span:after {
+  transform: scale(1) rotate(-45deg) translate(0px, 0px);
+}
+.b_article-incut.m_picture:fullscreen .picture-togglebtn:hover span:before, .b_article-incut.m_picture:fullscreen .picture-togglebtn:hover span:after {
+  background-color: #C9181E;
+  transform: scale(1) rotate(0deg) translate(0px, 0px);
 }
 
 .b_header {
@@ -1466,7 +1719,7 @@ hr.gap {
   bottom: 24px;
   width: 24px;
   height: 24px;
-  background: url(../img/ui/photo_wh.svg) no-repeat 50%;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/photo_wh.svg) no-repeat 50%;
 }
 .b_photo_digest-feature-images .box {
   position: absolute;
@@ -1734,7 +1987,7 @@ hr.gap {
   width: 24px;
   height: 24px;
   margin: 4px 0 0 4px;
-  background: url(../img/ui/photo_wh.svg) no-repeat 50%;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/photo_wh.svg) no-repeat 50%;
   background-size: 100%;
 }
 .b_ear.m_list {
@@ -1846,7 +2099,7 @@ hr.gap {
   top: 0;
   width: 35px;
   height: 16px;
-  background: url(../img/ui/live.svg) no-repeat 50%;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/live.svg) no-repeat 50%;
   background-size: auto 100%;
   vertical-align: middle;
   border-radius: 0%;
@@ -1892,7 +2145,7 @@ hr.gap {
   bottom: 1.6rem;
   width: 24px;
   height: 24px;
-  background: url(../img/ui/photo_wh.svg) no-repeat 50%;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/photo_wh.svg) no-repeat 50%;
 }
 
 .w_col_list .b_ear.m_list {
@@ -1984,7 +2237,7 @@ hr.gap {
   bottom: 0;
   width: 80px;
   opacity: 1;
-  background: url(../img/ui/arr_spread_gallery_bl.svg) no-repeat 50% 50%;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/arr_spread_gallery_bl.svg) no-repeat 50% 50%;
 }
 .b_photoreport-controlbtn span {
   position: absolute;
@@ -1994,7 +2247,7 @@ hr.gap {
   width: 80px;
   right: 0;
   opacity: 0;
-  background: url(../img/ui/arr_spread_gallery_bl.svg) no-repeat 50% 50%;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/arr_spread_gallery_bl.svg) no-repeat 50% 50%;
   transition: right 0.6s ease;
 }
 .b_photoreport-controlbtn:hover:not(.m_disable):before {
@@ -2103,7 +2356,7 @@ hr.gap {
   position: relative;
   width: 24px;
   height: 24px;
-  background: url(../img/ui/zoom_bl.svg) no-repeat 50% 50%;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/zoom_bl.svg) no-repeat 50% 50%;
   background-size: 100%;
   transform: scale(1);
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -2131,10 +2384,10 @@ hr.gap {
   background: #202020;
 }
 .b_photoreport:fullscreen .b_photoreport-controlbtn:before {
-  background: url(../img/ui/arr_spread_gallery_wh.svg) no-repeat 50% 50%;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/arr_spread_gallery_wh.svg) no-repeat 50% 50%;
 }
 .b_photoreport:fullscreen .b_photoreport-controlbtn span {
-  background: url(../img/ui/arr_spread_gallery_wh.svg) no-repeat 50% 50%;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/arr_spread_gallery_wh.svg) no-repeat 50% 50%;
 }
 .b_photoreport:fullscreen .b_photoreport-controlbtn.m_left {
   top: auto;
