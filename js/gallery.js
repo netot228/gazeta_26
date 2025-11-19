@@ -154,7 +154,7 @@ function gazetaGallery(props) {
                 }
 
             } else {
-                currentUrl = currentUrl + '?p=main&photo_num=' + curPhoto;
+                currentUrl = currentUrl + '?p=default&photo_num=' + curPhoto;
             }
 
             history.replaceState(null, '', currentUrl);
@@ -232,11 +232,21 @@ function gazetaGallery(props) {
             slideMove(mainItemsCollect[itemNum].offsetLeft, slideMoveType);
 
         })
-        loadSrc(itemNum);
+
+        if (mainItemsCollect[itemNum].tagName !== 'FIGURE') {
+            info.classList.add('disable');
+        } else {
+
+            if (info.classList.contains('disable')) {
+                info.classList.remove('disable');
+            }
+
+            loadSrc(itemNum);
+            setCaption(itemNum);
+            addUrlParams(itemNum);
+            previewItemHolder(itemNum);
+        }
         btnActivity();
-        setCaption(itemNum);
-        addUrlParams(itemNum);
-        previewItemHolder(itemNum);
     }
 
     function fullScreenToggle() {
@@ -286,7 +296,9 @@ function gazetaGallery(props) {
         if (previewItemsCollect && previewItemsCollect.length > 1) {
             previewItemsCollect.forEach(el => {
                 el.addEventListener('click', () => {
-                    if (el.classList.contains('active')) return;
+                    if (el.classList.contains('active') || el.classList.contains('disable')) {
+                        return;
+                    }
                     imageCounter = +el.dataset.item;
                     changeItem(imageCounter);
                 })

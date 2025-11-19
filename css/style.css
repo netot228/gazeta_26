@@ -26,43 +26,43 @@
 }
 
 .pt1 {
-  padding-top: calc(1 * 0.8rem);
+  padding-top: calc(1*0.8rem);
 }
 
 .pt2 {
-  padding-top: calc(2 * 0.8rem);
+  padding-top: calc(2*0.8rem);
 }
 
 .pt3 {
-  padding-top: calc(3 * 0.8rem);
+  padding-top: calc(3*0.8rem);
 }
 
 .pt4 {
-  padding-top: calc(4 * 0.8rem);
+  padding-top: calc(4*0.8rem);
 }
 
 .pt5 {
-  padding-top: calc(5 * 0.8rem);
+  padding-top: calc(5*0.8rem);
 }
 
 .pt6 {
-  padding-top: calc(6 * 0.8rem);
+  padding-top: calc(6*0.8rem);
 }
 
 .pt7 {
-  padding-top: calc(7 * 0.8rem);
+  padding-top: calc(7*0.8rem);
 }
 
 .pt8 {
-  padding-top: calc(8 * 0.8rem);
+  padding-top: calc(8*0.8rem);
 }
 
 .pt9 {
-  padding-top: calc(9 * 0.8rem);
+  padding-top: calc(9*0.8rem);
 }
 
 .pt10 {
-  padding-top: calc(10 * 0.8rem);
+  padding-top: calc(10*0.8rem);
 }
 
 :root {
@@ -352,7 +352,7 @@ table {
 .longdiv {
   width: 100%;
   height: 2000px;
-  background: rgb(157, 249, 233);
+  background: #9df9e9;
   flex-shrink: 0;
 }
 
@@ -2349,6 +2349,9 @@ hr.gap {
   width: 660px;
   padding: 1.6rem 0;
 }
+.b_photoreport-info.disable {
+  opacity: 0;
+}
 .b_photoreport-info .picsign {
   font: 400 1.6rem/1.5 "Source Sans 3", sans-serif;
   color: #fff;
@@ -2400,7 +2403,7 @@ hr.gap {
   transform-origin: 50%;
   transition: transform 0.3s ease;
 }
-.b_photoreport-preview .slider .item:hover {
+.b_photoreport-preview .slider .item:hover:not(.disable) {
   z-index: 2;
   transform: scale(1.15, 1.15);
 }
@@ -2422,6 +2425,10 @@ hr.gap {
 }
 .b_photoreport-preview .slider .item.active:before {
   opacity: 1;
+}
+.b_photoreport-preview .slider .item.disable {
+  opacity: 0.5;
+  cursor: default;
 }
 .b_photoreport-fullscreen-btn {
   position: absolute;
@@ -2452,6 +2459,127 @@ hr.gap {
 .b_photoreport-fullscreen-btn:hover span {
   transform: scale(1.2);
 }
+.b_photoreport-digest {
+  position: relative;
+  padding: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.b_photoreport-digest-wrapper {
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2.4rem;
+  align-items: center;
+  justify-content: center;
+}
+.b_photoreport-digest-item {
+  position: relative;
+  display: inline-flex;
+  width: 330px;
+  height: 220px;
+  flex-shrink: 0;
+  background: #202020;
+}
+.b_photoreport-digest-item .link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.b_photoreport-digest-item .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+.b_photoreport-digest-item .image img {
+  display: block;
+  height: 100%;
+}
+.b_photoreport-digest-item .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 4.8rem 2.4rem 2.4rem;
+  background: linear-gradient(to bottom, transparent, #202020);
+  min-height: 50%;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+  font: 700 18px/1.15 "Source Sans 3", sans-serif;
+  color: #fff;
+}
+.b_photoreport-digest-item .caption:after {
+  content: "";
+  position: absolute;
+  bottom: 2.4rem;
+  right: 1.6rem;
+  width: 24px;
+  height: 24px;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/photo_wh.svg) no-repeat 50%;
+}
+.b_photoreport-announce {
+  position: relative;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.b_photoreport-announce-bg {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: 50% 50%;
+  background-size: cover;
+  opacity: 0.2;
+  filter: blur(10px);
+}
+.b_photoreport-announce-title {
+  position: relative;
+  z-index: 3;
+  padding-top: 50px;
+  text-align: center;
+  width: 360px;
+  font: normal 18px/1.5 "Source Sans 3", sans-serif;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.b_photoreport-announce-title:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 28px;
+  height: 24px;
+  margin: auto;
+  background: url(https://static.gazeta.ru/nm2025/img/ui/photo_wh.svg) no-repeat 50% 0;
+}
+.b_photoreport-announce-btn {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  padding: 10px 20px;
+  background: #C9181E;
+  border-radius: 2px;
+  font: bold 14px/14px "Source Sans 3", sans-serif;
+  color: #fff;
+}
 .b_photoreport:fullscreen {
   background: var(--bg-color);
 }
@@ -2461,6 +2589,7 @@ hr.gap {
 }
 .b_photoreport:fullscreen .b_photoreport-mainarea .slider {
   right: 300px;
+  left: 40px;
 }
 .b_photoreport:fullscreen .b_photoreport-mainarea .slider img {
   height: auto;
@@ -2573,6 +2702,10 @@ hr.gap {
 .b_photoreport:fullscreen .b_photoreport-fullscreen-btn span:hover::after {
   background-color: #C9181E;
   transform: rotate(0deg);
+}
+.b_photoreport:fullscreen .b_photoreport-digest-item {
+  overflow: hidden;
+  border-radius: 24px;
 }
 
 /*# sourceMappingURL=style.css.map */

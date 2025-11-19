@@ -107,6 +107,9 @@
         width: $textContentWidth;
         padding: $gap2 0;
 
+        &.disable {
+            opacity: 0;
+        }
         .picsign {
             font: 400 1.6rem/1.5 $textSans;
             color: #fff;
@@ -129,7 +132,6 @@
                 display: none;
             }
         }
-
 
     }
 
@@ -166,7 +168,7 @@
                 transform-origin: 50%;
                 transition: transform 0.3s ease;
 
-                &:hover {
+                &:hover:not(.disable) {
                     z-index: 2;
                     transform: scale(1.15,1.15);
                 }
@@ -194,6 +196,11 @@
                     &:before {
                         opacity: 1;
                     }
+                }
+
+                &.disable {
+                    opacity: .5;
+                    cursor: default;
                 }
             }
         }
@@ -234,6 +241,139 @@
         }
     }
 
+    &-digest {
+        position: relative;
+        padding: $gap3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-wrapper {
+            width: 90%;
+            display: flex;
+            flex-flow: row wrap;
+            gap: $gap3;
+            align-items: center;
+            justify-content: center;
+        }
+        &-item {
+            position: relative;
+            display: inline-flex;
+            width: 330px;
+            height: 220px;
+            flex-shrink: 0;
+            background: $black;
+
+            .link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+
+            .image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                overflow: hidden;
+                border-radius: 24px;
+
+                img {
+                    display: block;
+                    height: 100%;
+                }
+            }
+
+            .caption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 60px $gap6 $gap3 $gap3;
+                background: linear-gradient(to bottom, transparent, $black);
+                min-height: 50%;
+                display: flex;
+                align-items: end;
+                justify-content: start;
+                font: 700 18px/1.15 $textSans;
+                color: #fff;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: $gap3;
+                    right: $gap2;
+                    width: 24px;
+                    height: 24px;
+                    background: url(https://static.gazeta.ru/nm2025/img/ui/photo_wh.svg) no-repeat 50%;
+                }
+
+            }
+        }
+    }
+
+    &-announce {
+        position: relative;
+        display: inline-flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+
+        &-bg {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-position: 50% 50%;
+            background-size: cover;
+            opacity: .2;
+            filter: blur(10px);
+        }
+        &-title {
+            position: relative;
+            z-index: 3;
+            padding-top: 50px;
+            text-align: center;
+            width: 360px;
+            font: normal 18px/1.5 $textSans;
+            color: #fff;
+            margin-bottom: 20px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                display: block;
+                width: 28px;
+                height: 24px;
+                margin: auto;
+                background: url(https://static.gazeta.ru/nm2025/img/ui/photo_wh.svg) no-repeat 50% 0;
+            }
+        }
+
+        &-btn {
+            position: relative;
+            z-index: 3;
+            display: inline-flex;
+            padding: 10px 20px;
+            background: $red;
+            border-radius: 2px;
+            font: bold 14px/14px $textSans;
+            color: #fff;
+        }
+    }
+
     &:fullscreen {
         background: var(--bg-color);
 
@@ -244,6 +384,7 @@
 
                 .slider {
                     right: 300px;
+                    left: 40px;
 
                     img {
                         height: auto;
@@ -372,8 +513,17 @@
                     }
                 }
             }
+
+            &-digest {
+                &-item {
+                    overflow: hidden;
+                    border-radius: 24px;
+                }
+            }
         }
 
     }
+
+
 
 }
