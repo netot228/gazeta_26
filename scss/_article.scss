@@ -293,12 +293,13 @@
     }
 
     &-incut {
+        position: relative;
+        margin-bottom: $gap2;
 
         &.m_details {
-            position: relative;
             width: 100%;
             margin-bottom: $gap2;
-            border-radius: 2px;
+            border-radius: 4px;
             background: var(--bg-color-light);
 
             .title {
@@ -363,7 +364,6 @@
         }
 
         &.m_picture {
-            position: relative;
             width: 100%;
 
             .picture {
@@ -598,6 +598,103 @@
                     }
                 }
 
+            }
+        }
+
+        &.m_articles {
+            padding: $gap3;
+            border: 1px solid var(--stroke-color);
+
+            
+            .title {
+                font: 400 1.2rem/1.35 $textSans;
+                color: var(--color-gray);
+                margin-bottom: $gap2;
+            }
+            .content {
+                position: relative;
+                display: flex;
+                flex-flow: column;
+                gap: $gap2;
+
+                .b_ear {
+                    &.m_list {
+                        width: 100%;
+                        margin-bottom: 0;
+                        gap: $gap2;
+                        .b_ear-time {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        &.m_cite {
+            margin-left: 30px;
+            background: var(--bg-color-light);
+            border-radius: 8px;
+            padding: $gap2;
+            display: flex;
+            flex-flow: column;
+            align-items: start;
+            gap: $gap;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -30px;
+                width: 20px;
+                height: 20px;
+                background: var(--icon-quote) no-repeat 50%;
+                background-size: 14px 12px;
+            }
+
+            .cite {
+                width: 100%;
+                font: 600 1.6rem/1.5 $textSerif;
+                color: var(--color-main);
+                font-style: italic;
+            }
+            .author {
+                display: flex;
+                width: 100%;
+                flex-flow: column;
+                align-items: start;
+                gap: $gap;
+
+                &-avatar {
+                    display: inline-flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    justify-content: start;
+                    gap: $gap;
+                }
+
+                &-photo {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    width: 24px;
+                    height: 24px;
+
+                    img {
+                        display: block;
+                        height: 100%;
+                    }
+                }
+
+                &-name {
+                    font: 400 1.4rem/1.25 $textSans;
+                    color: var(--color-main);
+                }
+
+                &-about {
+                    font: 400 1.2rem/1.25 $textSans;
+                    color: var(--color-gray);
+                }
             }
         }
     }
