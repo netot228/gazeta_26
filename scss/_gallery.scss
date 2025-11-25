@@ -199,7 +199,7 @@
                 }
 
                 &.disable {
-                    opacity: .5;
+                    opacity: .2;
                     cursor: default;
                 }
             }
@@ -325,6 +325,7 @@
         flex-flow: column;
         align-items: center;
         justify-content: center;
+        overflow: hiiden;
 
         &-bg {
             position: absolute;
@@ -371,6 +372,19 @@
             border-radius: 2px;
             font: bold 14px/14px $textSans;
             color: #fff;
+        }
+    }
+
+    &.m_is_incut {
+        .b_photoreport {
+            &-info {
+                padding: $gap2 $gap3;
+                .picsign {
+                    font: 400 1.4rem/1.25 $textSans;
+
+                    
+                }
+            }
         }
     }
 

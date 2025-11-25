@@ -154,7 +154,7 @@ function gazetaGallery(props) {
                 }
 
             } else {
-                currentUrl = currentUrl + '?p=default&photo_num=' + curPhoto;
+                currentUrl = currentUrl + '?p=main&photo_num=' + curPhoto;
             }
 
             history.replaceState(null, '', currentUrl);
@@ -232,21 +232,11 @@ function gazetaGallery(props) {
             slideMove(mainItemsCollect[itemNum].offsetLeft, slideMoveType);
 
         })
-
-        if (mainItemsCollect[itemNum].tagName !== 'FIGURE') {
-            info.classList.add('disable');
-        } else {
-
-            if (info.classList.contains('disable')) {
-                info.classList.remove('disable');
-            }
-
-            loadSrc(itemNum);
-            setCaption(itemNum);
-            addUrlParams(itemNum);
-            previewItemHolder(itemNum);
-        }
+        loadSrc(itemNum);
         btnActivity();
+        setCaption(itemNum);
+        addUrlParams(itemNum);
+        previewItemHolder(itemNum);
     }
 
     function fullScreenToggle() {
