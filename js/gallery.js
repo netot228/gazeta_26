@@ -293,17 +293,18 @@ function gazetaGallery(props) {
             })
         })
 
-        if (previewItemsCollect && previewItemsCollect.length > 1) {
-            previewItemsCollect.forEach(el => {
-                el.addEventListener('click', () => {
-                    if (el.classList.contains('active') || el.classList.contains('disable')) {
-                        return;
-                    }
-                    imageCounter = +el.dataset.item;
-                    changeItem(imageCounter);
-                })
+    }
+
+    if (previewItemsCollect && previewItemsCollect.length > 1) {
+        previewItemsCollect.forEach(el => {
+            el.addEventListener('click', () => {
+                if (el.classList.contains('active') || el.classList.contains('disable')) {
+                    return;
+                }
+                imageCounter = +el.dataset.item;
+                changeItem(imageCounter);
             })
-        }
+        })
     }
 
     fullscreenBtn.addEventListener('click', fullScreenToggle)
