@@ -26,6 +26,8 @@
     <!-- <link rel="stylesheet" href="https://static.gazeta.ru/nm2021/css/desktop_styles_collect.v233.css"> -->
 
     <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/common.js"></script>
 </head>
 
 <body class="ad_branding_site">
@@ -440,32 +442,35 @@
                         </p>
 
                         <div class="b_article-incut m_cite">
-                        
+
                             <a href="https://www.gazeta.ru/" class="cite">
-                        
-                                <p>К слову, сам Вайдич во время прошлой работы в&nbsp;сенате был причастен к&nbsp;введению санкции против
-                                    России, которые заставили Exxon Mobil отказаться от совместной работы с&nbsp;«Роснефтью»</p>
+
+                                <p>К слову, сам Вайдич во время прошлой работы в&nbsp;сенате был причастен
+                                    к&nbsp;введению санкции против
+                                    России, которые заставили Exxon Mobil отказаться от совместной работы
+                                    с&nbsp;«Роснефтью»</p>
                             </a>
-                        
-                        
-                        
+
+
+
                             <div class="author">
                                 <div class="author-avatar">
                                     <div class="author-photo">
-                                        <img src="https://img.gazeta.ru/files3/892/21817892/upload-3-pic_square_200x200-200x200-18917.jpg">
+                                        <img
+                                            src="https://img.gazeta.ru/files3/892/21817892/upload-3-pic_square_200x200-200x200-18917.jpg">
                                     </div>
-                            
+
                                     <div class="author-name">
                                         Вася Васечкин
                                     </div>
                                 </div>
-                        
+
                                 <div class="author-about">
                                     Профессор
                                 </div>
-                        
+
                             </div>
-                        
+
                         </div>
 
                         <div class="b_article-incut m_details _s_close_open_state_toggle" id="_id_check_incut">
@@ -585,44 +590,6 @@
 
                         <script>
                             {
-                                function fullScreenToggle(block, btn) {
-
-                                    let blockEl = null;
-                                    let blockBtn = null;
-
-                                    if (block instanceof HTMLElement) {
-                                        blockEl = block;
-                                    } else if (typeof block === 'string') {
-                                        blockEl = document.querySelector(block);
-                                    }
-                                    if (!blockEl) return;
-
-                                    if (btn) {
-                                        if (btn instanceof HTMLElement) {
-                                            btnEl = btn;
-                                        } else if (typeof btn === 'string') {
-                                            btnEl = document.querySelector(btn);
-                                        }
-                                    } else {
-                                        let checkBtn = blockEl.querySelector('._s_toggle_btn');
-                                        if (!checkBtn) {
-                                            blockBtn = blockEl
-                                        } else {
-                                            blockBtn = checkBtn
-                                        }
-                                    }
-
-                                    blockBtn.addEventListener('click', () => {
-                                        if (document.fullscreenElement) {
-                                            document.exitFullscreen();
-                                            return;
-                                        } else {
-                                            blockEl.requestFullscreen();
-                                        }
-                                    })
-
-                                }
-
                                 fullScreenToggle('#_uid_21818086_i_5');
                             }
                         </script>
@@ -667,9 +634,9 @@
                             <div class="title">
                                 Читайте также
                             </div>
-                        
+
                             <div class="content">
-                        
+
                                 <a href="/science/2025/10/22/21894128.shtml" class="b_ear m_list">
                                     <div class="b_ear-textblock">
                                         <div class="b_ear-title">
@@ -680,8 +647,8 @@
                                         </time>
                                     </div>
                                 </a>
-                        
-                        
+
+
                                 <a href="/science/2025/10/22/21894128.shtml" class="b_ear m_list">
                                     <div class="b_ear-textblock">
                                         <div class="b_ear-title">
@@ -699,8 +666,8 @@
                                                 " loading="lazy" />
                                     </div>
                                 </a>
-                        
-                        
+
+
                             </div>
                         </div>
 
