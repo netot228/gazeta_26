@@ -339,6 +339,16 @@
 
         }
 
+        &-video {
+            position: relative;
+            width: $textContentWidth;
+            height: calc($textContentWidth / 16)*9;
+        }
+
+        &-photoreport {
+            position: relative;
+            width: 100%;
+        }
 
     }
 
@@ -902,7 +912,7 @@
         }
         &-head {
             position: sticky;
-            z-index: 10;
+            z-index: 100;
             background: var(--bg-color);
             top: 40px; // headerHeight
             padding: $gap3 0;
@@ -1053,5 +1063,79 @@
 
     iframe {
         max-width: 100%;
+    }
+
+    &.m_column {
+        .b_article {
+            &-header {
+                align-items: center;
+                text-align: center;
+                padding: 0 118px;
+            }
+            &-title {
+                .headline {
+                    font-style: italic;
+                }
+            }
+            &-addinfo {
+                align-self: start;
+            }
+            &-author {
+                display: inline-flex;
+                align-items: center;
+
+                &-item {
+                    flex-flow: column;
+                    align-items: start;
+                    gap: 0.4rem;
+
+                    .wrapper {
+                        display: inline-flex;
+                        flex-flow: row nowrap;
+                        align-items: center;
+                        justify-content: center;
+                        gap: $gap;
+                    }
+                    .avatar {
+                        display: inline-flex;
+                        width: 24px;
+                        height: 24px;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .name {
+                        &-link {
+                            position: relative;
+                            display: inline-flex;
+                            flex-flow: row nowrap;
+
+                            &:after {
+                                content: 'Колумнист';
+                                display: inline-flex;
+                                align-items: center;
+                                height: 1.6rem;
+                                padding: 0 4px;
+                                font: 600 1.1rem/1 $textSans;
+                                color: var(--color-contrast);
+                                background: var(--color-main);
+                                border-radius: 1px;
+                                margin-left: $gap;
+                            }
+                        }
+                    }
+                    .info {
+                        display: inline-flex;
+                        font: 400 1.2rem/1.35 $textSans;
+                        color: var(--color-gray);
+                    }
+                }
+            }
+        }
     }
 }
